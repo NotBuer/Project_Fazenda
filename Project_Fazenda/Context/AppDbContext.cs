@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Project_Fazenda.Models;
+using Fazenda.Domain.Entities;
 
 namespace Project_Fazenda.Context
 {

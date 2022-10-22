@@ -1,8 +1,7 @@
-﻿namespace Project_Fazenda.Models
+﻿namespace Fazenda.Domain.Entities
 {
     public class CompraGadoItem
     {
-        #region CompraGado
         public int IdCompraItem { get; set; }
 
         public int IdCompraGado { get; set; }
@@ -12,6 +11,5 @@
         public Animal? Animal { get; set; }
 
         public int? Quantidade { get; set; }
-        #endregion
     }
 }
