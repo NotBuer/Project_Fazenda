@@ -30,8 +30,8 @@ namespace Project_Fazenda.Context
             mb.Entity<Animal>().Property(c => c.IdAnimal).ValueGeneratedOnAdd();
             mb.Entity<Animal>().Property(c => c.DescricaoAnimal).HasMaxLength(500).IsRequired();
 
-            mb.Entity<CompraGadoItem>().HasKey(c => c.IdCompraItem);
-            mb.Entity<CompraGadoItem>().Property(c => c.IdCompraItem).ValueGeneratedOnAdd();
+            mb.Entity<CompraGadoItem>().HasKey(c => c.IdCompraGadoItem);
+            mb.Entity<CompraGadoItem>().Property(c => c.IdCompraGadoItem).ValueGeneratedOnAdd();
             mb.Entity<CompraGadoItem>().Property(c => c.Quantidade).HasMaxLength(999).IsRequired();
 
             // Foreign Keys

@@ -13,7 +13,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Service", "3 - Service"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{9B02CD58-A58D-4470-A5D3-D7E3AF944C64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fazenda.Domain", "Fazenda.Domain\Fazenda.Domain.csproj", "{FF7F46A2-86B1-4C1E-BB62-EF3611D7A9E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fazenda.Domain", "Fazenda.Domain\Fazenda.Domain.csproj", "{FF7F46A2-86B1-4C1E-BB62-EF3611D7A9E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fazenda.Context", "Fazenda.Context\Fazenda.Context.csproj", "{135B2F68-DE63-47D3-BADA-94CD1BCB6912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fazenda.IoC", "Fazenda.IoC\Fazenda.IoC.csproj", "{500453EB-1ADE-4D92-A44A-6DF3260347FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fazenda.Repository", "Fazenda.Repository\Fazenda.Repository.csproj", "{82E1FE3A-BC51-424C-A769-A4F3D3F43FD2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D3EDC92B-A810-4616-985F-33A503CAEE42}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +40,27 @@ Global
 		{FF7F46A2-86B1-4C1E-BB62-EF3611D7A9E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF7F46A2-86B1-4C1E-BB62-EF3611D7A9E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF7F46A2-86B1-4C1E-BB62-EF3611D7A9E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{135B2F68-DE63-47D3-BADA-94CD1BCB6912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{135B2F68-DE63-47D3-BADA-94CD1BCB6912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{135B2F68-DE63-47D3-BADA-94CD1BCB6912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{135B2F68-DE63-47D3-BADA-94CD1BCB6912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{500453EB-1ADE-4D92-A44A-6DF3260347FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{500453EB-1ADE-4D92-A44A-6DF3260347FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{500453EB-1ADE-4D92-A44A-6DF3260347FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{500453EB-1ADE-4D92-A44A-6DF3260347FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82E1FE3A-BC51-424C-A769-A4F3D3F43FD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82E1FE3A-BC51-424C-A769-A4F3D3F43FD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82E1FE3A-BC51-424C-A769-A4F3D3F43FD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82E1FE3A-BC51-424C-A769-A4F3D3F43FD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FF7F46A2-86B1-4C1E-BB62-EF3611D7A9E9} = {06CB8015-E470-4F7F-BA2C-0AF5C117E6E8}
+		{135B2F68-DE63-47D3-BADA-94CD1BCB6912} = {9B02CD58-A58D-4470-A5D3-D7E3AF944C64}
+		{500453EB-1ADE-4D92-A44A-6DF3260347FD} = {9B02CD58-A58D-4470-A5D3-D7E3AF944C64}
+		{82E1FE3A-BC51-424C-A769-A4F3D3F43FD2} = {9B02CD58-A58D-4470-A5D3-D7E3AF944C64}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2B7C512A-CCBF-4D6A-8005-91F5C79097F6}
