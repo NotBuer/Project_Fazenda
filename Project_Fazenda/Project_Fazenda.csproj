@@ -15,5 +15,9 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fazenda.Domain\Fazenda.Domain.csproj" />
+  </ItemGroup>
 	
 </Project>
