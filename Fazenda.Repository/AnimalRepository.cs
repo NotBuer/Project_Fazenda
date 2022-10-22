@@ -4,6 +4,10 @@
     {
         private readonly MyContext _contexto;
 
+        public AnimalRepository(MyContext contexto)
+        {
+            _contexto = contexto;
+        }
 
         public void Criar(Animal animal)
         {

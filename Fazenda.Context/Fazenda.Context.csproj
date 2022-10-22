@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Mappings\" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fazenda.Domain\Fazenda.Domain.csproj" />
   </ItemGroup>
 
 </Project>

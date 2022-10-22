@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Fazenda.Context\Fazenda.Context.csproj" />
-    <ProjectReference Include="..\Fazenda.Domain\Fazenda.Domain.csproj" />
-  </ItemGroup>
-
 </Project>
