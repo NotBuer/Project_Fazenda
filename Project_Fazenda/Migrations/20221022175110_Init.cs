@@ -1,12 +1,11 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
 namespace Project_Fazenda.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,10 +13,10 @@ namespace Project_Fazenda.Migrations
                 name: "Animais",
                 columns: table => new
                 {
-                    IdAnimal = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    DescricaoAnimal = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: false),
-                    Preco = table.Column<decimal>(type: "numeric", nullable: false)
+                    IdAnimal = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DescricaoAnimal = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Preco = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,9 +27,9 @@ namespace Project_Fazenda.Migrations
                 name: "Pecuarista",
                 columns: table => new
                 {
-                    IdPecuarista = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    NomePecuarista = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false)
+                    IdPecuarista = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NomePecuarista = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,9 +40,9 @@ namespace Project_Fazenda.Migrations
                 name: "CompraGado",
                 columns: table => new
                 {
-                    IdCompra = table.Column<int>(type: "integer", nullable: false),
-                    IdPecuarista = table.Column<int>(type: "integer", nullable: false),
-                    DataEntrega = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    IdCompra = table.Column<int>(type: "int", nullable: false),
+                    IdPecuarista = table.Column<int>(type: "int", nullable: false),
+                    DataEntrega = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -60,12 +59,12 @@ namespace Project_Fazenda.Migrations
                 name: "CompraGadoEm",
                 columns: table => new
                 {
-                    IdCompraEm = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    IdCompraGado = table.Column<int>(type: "integer", nullable: false),
-                    CompraGadoIdCompra = table.Column<int>(type: "integer", nullable: true),
-                    IdAnimal = table.Column<int>(type: "integer", nullable: false),
-                    Quantidade = table.Column<int>(type: "integer", maxLength: 999, nullable: false)
+                    IdCompraEm = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdCompraGado = table.Column<int>(type: "int", nullable: false),
+                    CompraGadoIdCompra = table.Column<int>(type: "int", nullable: true),
+                    IdAnimal = table.Column<int>(type: "int", nullable: false),
+                    Quantidade = table.Column<int>(type: "int", maxLength: 999, nullable: false)
                 },
                 constraints: table =>
                 {

@@ -2,8 +2,8 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Project_Fazenda.Context;
 
 #nullable disable
@@ -17,26 +17,26 @@ namespace Project_Fazenda.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.1")
-                .HasAnnotation("Relational:MaxIdentifierLength", 63);
+                .HasAnnotation("ProductVersion", "6.0.10")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
             modelBuilder.Entity("Project_Fazenda.Models.Animal", b =>
                 {
                     b.Property<int>("IdAnimal")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdAnimal"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdAnimal"), 1L, 1);
 
                     b.Property<string>("DescricaoAnimal")
                         .IsRequired()
                         .HasMaxLength(500)
-                        .HasColumnType("character varying(500)");
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<decimal>("Preco")
-                        .HasColumnType("numeric");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("IdAnimal");
 
@@ -46,13 +46,13 @@ namespace Project_Fazenda.Migrations
             modelBuilder.Entity("Project_Fazenda.Models.CompraGado", b =>
                 {
                     b.Property<int>("IdCompra")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("DataEntrega")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("IdPecuarista")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.HasKey("IdCompra");
 
@@ -63,23 +63,23 @@ namespace Project_Fazenda.Migrations
                 {
                     b.Property<int>("IdCompraEm")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdCompraEm"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCompraEm"), 1L, 1);
 
                     b.Property<int?>("CompraGadoIdCompra")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<int>("IdAnimal")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<int>("IdCompraGado")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<int?>("Quantidade")
                         .IsRequired()
                         .HasMaxLength(999)
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.HasKey("IdCompraEm");
 
@@ -94,14 +94,14 @@ namespace Project_Fazenda.Migrations
                 {
                     b.Property<int>("IdPecuarista")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdPecuarista"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdPecuarista"), 1L, 1);
 
                     b.Property<string>("NomePecuarista")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("IdPecuarista");
 
