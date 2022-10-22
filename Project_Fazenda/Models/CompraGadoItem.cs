@@ -1,9 +1,9 @@
 ﻿namespace Project_Fazenda.Models
 {
-    public class CompraGadoEm
+    public class CompraGadoItem
     {
         #region CompraGado
-        public int IdCompraEm { get; set; }
+        public int IdCompraItem { get; set; }
 
         public int IdCompraGado { get; set; }
         public CompraGado? CompraGado { get; set; }

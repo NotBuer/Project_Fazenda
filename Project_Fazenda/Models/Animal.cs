@@ -7,7 +7,7 @@
         public string? DescricaoAnimal { get; set; }
         public decimal Preco { get; set; }
 
-        public ICollection<CompraGadoEm>? CompraGadoEms { get; set; }
+        public ICollection<CompraGadoItem>? CompraGadoEms { get; set; }
         #endregion
     }
 }

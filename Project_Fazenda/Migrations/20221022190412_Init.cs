@@ -40,7 +40,8 @@ namespace Project_Fazenda.Migrations
                 name: "CompraGado",
                 columns: table => new
                 {
-                    IdCompra = table.Column<int>(type: "int", nullable: false),
+                    IdCompra = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     IdPecuarista = table.Column<int>(type: "int", nullable: false),
                     DataEntrega = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -48,8 +49,8 @@ namespace Project_Fazenda.Migrations
                 {
                     table.PrimaryKey("PK_CompraGado", x => x.IdCompra);
                     table.ForeignKey(
-                        name: "FK_CompraGado_Pecuarista_IdCompra",
-                        column: x => x.IdCompra,
+                        name: "FK_CompraGado_Pecuarista_IdPecuarista",
+                        column: x => x.IdPecuarista,
                         principalTable: "Pecuarista",
                         principalColumn: "IdPecuarista",
                         onDelete: ReferentialAction.Cascade);
@@ -59,38 +60,54 @@ namespace Project_Fazenda.Migrations
                 name: "CompraGadoEm",
                 columns: table => new
                 {
-                    IdCompraEm = table.Column<int>(type: "int", nullable: false)
+                    IdCompraItem = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IdCompraGado = table.Column<int>(type: "int", nullable: false),
-                    CompraGadoIdCompra = table.Column<int>(type: "int", nullable: true),
+                    IdCompraGado = table.Column<int>(type: "Int", nullable: false),
                     IdAnimal = table.Column<int>(type: "int", nullable: false),
-                    Quantidade = table.Column<int>(type: "int", maxLength: 999, nullable: false)
+                    Quantidade = table.Column<int>(type: "int", maxLength: 999, nullable: false),
+                    AnimalIdAnimal1 = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CompraGadoEm", x => x.IdCompraEm);
+                    table.PrimaryKey("PK_CompraGadoEm", x => x.IdCompraItem);
+                    table.ForeignKey(
+                        name: "FK_CompraGadoEm_Animais_AnimalIdAnimal1",
+                        column: x => x.AnimalIdAnimal1,
+                        principalTable: "Animais",
+                        principalColumn: "IdAnimal");
                     table.ForeignKey(
                         name: "FK_CompraGadoEm_Animais_IdAnimal",
                         column: x => x.IdAnimal,
                         principalTable: "Animais",
                         principalColumn: "IdAnimal",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CompraGadoEm_CompraGado_CompraGadoIdCompra",
-                        column: x => x.CompraGadoIdCompra,
+                        name: "FK_CompraGadoEm_CompraGado_IdCompraGado",
+                        column: x => x.IdCompraGado,
                         principalTable: "CompraGado",
-                        principalColumn: "IdCompra");
+                        principalColumn: "IdCompra",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CompraGadoEm_CompraGadoIdCompra",
+                name: "IX_CompraGado_IdPecuarista",
+                table: "CompraGado",
+                column: "IdPecuarista");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CompraGadoEm_AnimalIdAnimal1",
                 table: "CompraGadoEm",
-                column: "CompraGadoIdCompra");
+                column: "AnimalIdAnimal1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CompraGadoEm_IdAnimal",
                 table: "CompraGadoEm",
                 column: "IdAnimal");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CompraGadoEm_IdCompraGado",
+                table: "CompraGadoEm",
+                column: "IdCompraGado");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

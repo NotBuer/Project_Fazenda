@@ -46,7 +46,10 @@ namespace Project_Fazenda.Migrations
             modelBuilder.Entity("Project_Fazenda.Models.CompraGado", b =>
                 {
                     b.Property<int>("IdCompra")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCompra"), 1L, 1);
 
                     b.Property<DateTime?>("DataEntrega")
                         .HasColumnType("datetime2");
@@ -56,36 +59,40 @@ namespace Project_Fazenda.Migrations
 
                     b.HasKey("IdCompra");
 
+                    b.HasIndex("IdPecuarista");
+
                     b.ToTable("CompraGado");
                 });
 
-            modelBuilder.Entity("Project_Fazenda.Models.CompraGadoEm", b =>
+            modelBuilder.Entity("Project_Fazenda.Models.CompraGadoItem", b =>
                 {
-                    b.Property<int>("IdCompraEm")
+                    b.Property<int>("IdCompraItem")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCompraEm"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCompraItem"), 1L, 1);
 
-                    b.Property<int?>("CompraGadoIdCompra")
+                    b.Property<int?>("AnimalIdAnimal1")
                         .HasColumnType("int");
 
                     b.Property<int>("IdAnimal")
                         .HasColumnType("int");
 
                     b.Property<int>("IdCompraGado")
-                        .HasColumnType("int");
+                        .HasColumnType("Int");
 
                     b.Property<int?>("Quantidade")
                         .IsRequired()
                         .HasMaxLength(999)
                         .HasColumnType("int");
 
-                    b.HasKey("IdCompraEm");
+                    b.HasKey("IdCompraItem");
 
-                    b.HasIndex("CompraGadoIdCompra");
+                    b.HasIndex("AnimalIdAnimal1");
 
                     b.HasIndex("IdAnimal");
+
+                    b.HasIndex("IdCompraGado");
 
                     b.ToTable("CompraGadoEm");
                 });
@@ -112,23 +119,29 @@ namespace Project_Fazenda.Migrations
                 {
                     b.HasOne("Project_Fazenda.Models.Pecuarista", "Pecuarista")
                         .WithMany("CompraGados")
-                        .HasForeignKey("IdCompra")
+                        .HasForeignKey("IdPecuarista")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Pecuarista");
                 });
 
-            modelBuilder.Entity("Project_Fazenda.Models.CompraGadoEm", b =>
+            modelBuilder.Entity("Project_Fazenda.Models.CompraGadoItem", b =>
                 {
-                    b.HasOne("Project_Fazenda.Models.CompraGado", "CompraGado")
-                        .WithMany()
-                        .HasForeignKey("CompraGadoIdCompra");
+                    b.HasOne("Project_Fazenda.Models.Animal", null)
+                        .WithMany("CompraGadoEms")
+                        .HasForeignKey("AnimalIdAnimal1");
 
                     b.HasOne("Project_Fazenda.Models.Animal", "Animal")
-                        .WithMany("CompraGadoEms")
+                        .WithMany()
                         .HasForeignKey("IdAnimal")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Project_Fazenda.Models.CompraGado", "CompraGado")
+                        .WithMany()
+                        .HasForeignKey("IdCompraGado")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Animal");
