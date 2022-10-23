@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.2.2" />
+    <PackageReference Include="MicroElements.Swashbuckle.FluentValidation" Version="5.7.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -17,6 +19,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Fazenda.Context\Fazenda.Context.csproj" />
+    <ProjectReference Include="..\Fazenda.IoC\Fazenda.IoC.csproj" />
+    <ProjectReference Include="..\Fazenda.Repository\Fazenda.Repository.csproj" />
   </ItemGroup>
 
 </Project>

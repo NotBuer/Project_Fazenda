@@ -7,15 +7,19 @@ services.AddDbContext<ApplicationDbContext>(optionsBuilder =>
 
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
+services.AddFluentValidationRulesToSwagger();
 
-var app = builder.Build();
+Injector.RegisterInjection(services);
 
-// Configure the HTTP request pipeline.
+await using WebApplication app = builder.Build();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
 }
 
 app.UseHttpsRedirection();
+app.MapEndpoints();
 app.Run();

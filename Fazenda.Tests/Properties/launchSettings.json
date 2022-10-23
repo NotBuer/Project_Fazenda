@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Fazenda.Tests": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:54275;http://localhost:54279"
+    }
+  }
+}

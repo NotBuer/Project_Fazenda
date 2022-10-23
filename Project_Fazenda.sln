@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project_Fazenda", "Project_Fazenda\Project_Fazenda.csproj", "{27142FF6-4C0A-4462-9565-074734E9CDE9}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{06CB8015-E470-4F7F-BA2C-0AF5C117E6E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{506E9168-0A32-4CAE-8E38-93F6D7CE4E95}"
@@ -42,10 +40,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{27142FF6-4C0A-4462-9565-074734E9CDE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27142FF6-4C0A-4462-9565-074734E9CDE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27142FF6-4C0A-4462-9565-074734E9CDE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27142FF6-4C0A-4462-9565-074734E9CDE9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FF7F46A2-86B1-4C1E-BB62-EF3611D7A9E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FF7F46A2-86B1-4C1E-BB62-EF3611D7A9E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF7F46A2-86B1-4C1E-BB62-EF3611D7A9E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
