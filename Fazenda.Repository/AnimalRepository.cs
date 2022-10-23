@@ -2,9 +2,9 @@
 {
     public class AnimalRepository : IAnimalRepository
     {
-        private readonly MyContext _contexto;
+        private readonly ApplicationDbContext _contexto;
 
-        public AnimalRepository(MyContext contexto)
+        public AnimalRepository(ApplicationDbContext contexto)
         {
             _contexto = contexto;
         }

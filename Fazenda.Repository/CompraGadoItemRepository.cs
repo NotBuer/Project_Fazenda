@@ -2,9 +2,9 @@
 {
     public class CompraGadoItemRepository : ICompraGadoItemRepository
     {
-        private readonly MyContext _contexto;
+        private readonly ApplicationDbContext _contexto;
 
-        public CompraGadoItemRepository(MyContext contexto)
+        public CompraGadoItemRepository(ApplicationDbContext contexto)
         {
             _contexto = contexto;
         }

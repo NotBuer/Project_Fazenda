@@ -15,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fazenda.Domain", "Fazenda.Domain\Fazenda.Domain.csproj", "{FF7F46A2-86B1-4C1E-BB62-EF3611D7A9E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fazenda.Context", "Fazenda.Context\Fazenda.Context.csproj", "{135B2F68-DE63-47D3-BADA-94CD1BCB6912}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fazenda.Context", "Fazenda.Context\Fazenda.Context.csproj", "{135B2F68-DE63-47D3-BADA-94CD1BCB6912}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fazenda.IoC", "Fazenda.IoC\Fazenda.IoC.csproj", "{500453EB-1ADE-4D92-A44A-6DF3260347FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fazenda.IoC", "Fazenda.IoC\Fazenda.IoC.csproj", "{500453EB-1ADE-4D92-A44A-6DF3260347FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fazenda.Repository", "Fazenda.Repository\Fazenda.Repository.csproj", "{82E1FE3A-BC51-424C-A769-A4F3D3F43FD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fazenda.Repository", "Fazenda.Repository\Fazenda.Repository.csproj", "{82E1FE3A-BC51-424C-A769-A4F3D3F43FD2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D3EDC92B-A810-4616-985F-33A503CAEE42}"
 	ProjectSection(SolutionItems) = preProject
@@ -28,11 +28,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Test", "5 - Test", "{D6B98C75-2B1B-40CD-B292-F079BDBF9C70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fazenda.Tests", "Fazenda.Tests\Fazenda.Tests.csproj", "{C2A35EB3-4E87-4E34-B35C-C2F455287242}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fazenda.Tests", "Fazenda.Tests\Fazenda.Tests.csproj", "{C2A35EB3-4E87-4E34-B35C-C2F455287242}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{C870A8B0-611C-4948-B3C9-DA0081D521B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{5DFE5587-CEC9-4D49-A47E-E02AA61A7D7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{5DFE5587-CEC9-4D49-A47E-E02AA61A7D7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pecuaria", "Pecuaria\Pecuaria.csproj", "{F139757F-4108-471D-8C07-FF3012770005}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +70,10 @@ Global
 		{5DFE5587-CEC9-4D49-A47E-E02AA61A7D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DFE5587-CEC9-4D49-A47E-E02AA61A7D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DFE5587-CEC9-4D49-A47E-E02AA61A7D7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F139757F-4108-471D-8C07-FF3012770005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F139757F-4108-471D-8C07-FF3012770005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F139757F-4108-471D-8C07-FF3012770005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F139757F-4108-471D-8C07-FF3012770005}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{82E1FE3A-BC51-424C-A769-A4F3D3F43FD2} = {9B02CD58-A58D-4470-A5D3-D7E3AF944C64}
 		{C2A35EB3-4E87-4E34-B35C-C2F455287242} = {D6B98C75-2B1B-40CD-B292-F079BDBF9C70}
 		{5DFE5587-CEC9-4D49-A47E-E02AA61A7D7E} = {506E9168-0A32-4CAE-8E38-93F6D7CE4E95}
+		{F139757F-4108-471D-8C07-FF3012770005} = {C870A8B0-611C-4948-B3C9-DA0081D521B9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2B7C512A-CCBF-4D6A-8005-91F5C79097F6}

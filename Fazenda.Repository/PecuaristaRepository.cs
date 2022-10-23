@@ -2,9 +2,9 @@
 {
     public class PecuaristaRepository : IPecuaristaRepository
     {
-        public readonly MyContext _contexto;
+        public readonly ApplicationDbContext _contexto;
 
-        public PecuaristaRepository(MyContext contexto)
+        public PecuaristaRepository(ApplicationDbContext contexto)
         {
             _contexto = contexto;
         }

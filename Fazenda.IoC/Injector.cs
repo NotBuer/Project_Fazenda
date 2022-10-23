@@ -11,7 +11,7 @@ namespace Fazenda.IoC
             services.AddScoped<IAnimalRepository, AnimalRepository>();
             services.AddScoped<ICompraGadoItemRepository, CompraGadoItemRepository>();
             services.AddScoped<ICompraGadoRepository, CompraGadoRepository>();
-            services.AddScoped <IPecuaristaRepository, PecuaristaRepository>();
+            services.AddScoped<IPecuaristaRepository, PecuaristaRepository>();
         }
     }
 }

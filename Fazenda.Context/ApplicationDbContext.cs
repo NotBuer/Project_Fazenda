@@ -1,8 +1,13 @@
 ﻿namespace Fazenda.Context
 {
-    public class MyContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public MyContext(DbContextOptions options) : base(options) { }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+
+        public DbSet<Animal> Animal { get; set; }
+        public DbSet<CompraGado> CompraGado { get; set; }
+        public DbSet<CompraGadoItem> CompraGadoItem { get; set; }
+        public DbSet<Pecuarista> Pecuarista { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -13,10 +18,5 @@
 
             base.OnModelCreating(modelBuilder);
         }
-
-        public DbSet<Animal> Animal { get; set; }
-        public DbSet<CompraGado> CompraGado { get; set; }
-        public DbSet<CompraGadoItem> CompraGadoItem { get; set; }
-        public DbSet<Pecuarista> Pecuarista { get; set; }
     }
 }
