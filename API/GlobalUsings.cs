@@ -7,3 +7,4 @@ global using Fazenda.Repository;
 global using Fazenda.IoC;
 
 global using API.Mappings;
+global using Fazenda.Domain.Entities;

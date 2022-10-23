@@ -1,10 +1,13 @@
-﻿using Fazenda.Domain.Entities;
-using Microsoft.AspNetCore.Mvc;
-
-namespace API.Endpoints
+﻿namespace API.Endpoints
 {
-    public static partial class AnimalEndpoints
+    public static class AnimalEndpoints
     {
+
+        public const string POST_Route = "/animal/{id}";
+        public const string PUT_Route = "/animal/{id}";
+        public const string DELETE_Route = "/animal/{id}";
+        public const string GETById_Route = "/animal/{id}";
+        public const string GETAll_Route = "/animal";
 
         public static void Map(WebApplication app)
         {
@@ -17,7 +20,7 @@ namespace API.Endpoints
 
         private static void MapCreateAnimal(WebApplication app)
         {
-            app.MapPost("/animal/{id}", async (AnimalRepository animalRepository, Animal animal) => 
+            app.MapPost(POST_Route, async (AnimalRepository animalRepository, Animal animal) => 
             {
                 try
                 {
@@ -34,7 +37,7 @@ namespace API.Endpoints
 
         private static void MapUpdateAnimal(WebApplication app)
         {
-            app.MapPut("/animal/{id}", async (AnimalRepository animalRepository, Animal animal) =>
+            app.MapPut(PUT_Route, async (AnimalRepository animalRepository, Animal animal) =>
             {
                 try
                 {
@@ -51,7 +54,7 @@ namespace API.Endpoints
 
         private static void MapDeleteAnimal(WebApplication app)
         {
-            app.MapDelete("/delete/{id}", async (AnimalRepository animalRepository, int id) =>
+            app.MapDelete(DELETE_Route, async (AnimalRepository animalRepository, int id) =>
             {
                 try
                 {
@@ -73,7 +76,7 @@ namespace API.Endpoints
 
         private static void MapGetAnimalById(WebApplication app) 
         {
-            app.MapGet("/animal/{id}", async (AnimalRepository animalRepository, int id) =>
+            app.MapGet(GETById_Route, async (AnimalRepository animalRepository, int id) =>
             {
                 try
                 {
@@ -91,7 +94,7 @@ namespace API.Endpoints
 
         private static void MapGetAllAnimals(WebApplication app)
         {
-            app.MapGet("/animal", async (AnimalRepository animalRepository) =>
+            app.MapGet(GETAll_Route, async (AnimalRepository animalRepository) =>
             {
                 try
                 {

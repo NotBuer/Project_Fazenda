@@ -20,7 +20,7 @@ namespace Pecuaria
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            System.Net.ServicePointManager.ServerCertificateValidationCallback = (senderX, certificate, chain, sslPolicyErrors) => { return true; };
         }
 
         private void label1_Click(object sender, EventArgs e)

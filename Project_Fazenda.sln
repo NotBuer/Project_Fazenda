@@ -33,6 +33,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{5DFE5587-CEC9-4D49-A47E-E02AA61A7D7E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pecuaria", "Pecuaria\Pecuaria.csproj", "{F139757F-4108-471D-8C07-FF3012770005}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5DFE5587-CEC9-4D49-A47E-E02AA61A7D7E} = {5DFE5587-CEC9-4D49-A47E-E02AA61A7D7E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
