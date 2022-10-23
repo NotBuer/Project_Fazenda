@@ -66,6 +66,7 @@
             this.btnAdicionar.TabIndex = 4;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnImprimir
             // 
@@ -136,9 +137,9 @@
             this.ColunPecuarista,
             this.colunData,
             this.ColunValor});
-            this.dataGridView1.Location = new System.Drawing.Point(22, 246);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 302);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1100, 366);
+            this.dataGridView1.Size = new System.Drawing.Size(1100, 265);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
