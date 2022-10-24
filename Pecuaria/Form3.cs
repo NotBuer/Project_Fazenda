@@ -29,7 +29,7 @@ namespace Pecuaria
 
             Animal animal = new Animal
             {
-                DescricaoAnimal = txt_animalName.Text,
+                NomeAnimal = txt_animalName.Text,
                 Preco = decimal.Parse(txt_animalPrice.Text), // TODO: Numbers-only field, needs validation against other characters.
             };
 

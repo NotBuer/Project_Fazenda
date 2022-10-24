@@ -6,7 +6,7 @@
         public int Id { get; set; }
 
         [Required]
-        public string DescricaoAnimal { get; set; }
+        public string NomeAnimal { get; set; }
 
         [Required]
         public decimal Preco { get; set; }
