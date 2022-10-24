@@ -44,7 +44,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btn_addAnimal = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnCadastrarP = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimais)).BeginInit();
             this.SuspendLayout();
@@ -208,21 +208,23 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // btnCadastrarP
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "label3";
+            this.btnCadastrarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarP.Location = new System.Drawing.Point(862, 248);
+            this.btnCadastrarP.Name = "btnCadastrarP";
+            this.btnCadastrarP.Size = new System.Drawing.Size(127, 41);
+            this.btnCadastrarP.TabIndex = 19;
+            this.btnCadastrarP.Text = "Cadastrar Pecuarista";
+            this.btnCadastrarP.UseVisualStyleBackColor = true;
+            this.btnCadastrarP.Click += new System.EventHandler(this.btnCadastrarP_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 609);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnCadastrarP);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnVoltar);
@@ -234,7 +236,7 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Compras";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -260,8 +262,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btn_addAnimal;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCadastrarP;
     }
 }
