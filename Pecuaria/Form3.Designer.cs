@@ -28,13 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.txt_animalName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_animalPrice = new System.Windows.Forms.TextBox();
-            this.txt_animalName = new System.Windows.Forms.TextBox();
             this.btnCadastrarAnimal = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // txt_animalName
+            // 
+            this.txt_animalName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_animalName.Location = new System.Drawing.Point(170, 187);
+            this.txt_animalName.Name = "txt_animalName";
+            this.txt_animalName.Size = new System.Drawing.Size(428, 29);
+            this.txt_animalName.TabIndex = 5;
             // 
             // label1
             // 
@@ -74,15 +82,6 @@
             this.txt_animalPrice.Size = new System.Drawing.Size(428, 29);
             this.txt_animalPrice.TabIndex = 4;
             // 
-            // txt_animalName
-            // 
-            this.txt_animalName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_animalName.Location = new System.Drawing.Point(170, 187);
-            this.txt_animalName.Name = "txt_animalName";
-            this.txt_animalName.Size = new System.Drawing.Size(428, 29);
-            this.txt_animalName.TabIndex = 5;
-            this.txt_animalName.TextChanged += new System.EventHandler(this.txt_animalName_TextChanged);
-            // 
             // btnCadastrarAnimal
             // 
             this.btnCadastrarAnimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,7 +117,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_animalPrice;
-        private System.Windows.Forms.TextBox txt_animalName;
         private System.Windows.Forms.Button btnCadastrarAnimal;
+        private System.Windows.Forms.TextBox txt_animalName;
     }
 }
