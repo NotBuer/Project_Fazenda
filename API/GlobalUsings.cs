@@ -1,4 +1,5 @@
 ﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.EntityFrameworkCore.SqlServer;
 global using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
 

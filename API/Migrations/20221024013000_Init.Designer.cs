@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221023002003_Initialize")]
-    partial class Initialize
+    [Migration("20221024013000_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -83,8 +83,7 @@ namespace API.Migrations
                     b.Property<int>("IdCompraGado")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Quantidade")
-                        .IsRequired()
+                    b.Property<int>("Quantidade")
                         .HasMaxLength(999)
                         .HasColumnType("int");
 
@@ -131,7 +130,7 @@ namespace API.Migrations
             modelBuilder.Entity("Fazenda.Domain.Entities.CompraGadoItem", b =>
                 {
                     b.HasOne("Fazenda.Domain.Entities.Animal", null)
-                        .WithMany("CompraGadoEms")
+                        .WithMany("CompraGadoItems")
                         .HasForeignKey("AnimalIdAnimal1");
 
                     b.HasOne("Fazenda.Domain.Entities.Animal", "Animal")
@@ -153,7 +152,7 @@ namespace API.Migrations
 
             modelBuilder.Entity("Fazenda.Domain.Entities.Animal", b =>
                 {
-                    b.Navigation("CompraGadoEms");
+                    b.Navigation("CompraGadoItems");
                 });
 
             modelBuilder.Entity("Fazenda.Domain.Entities.Pecuarista", b =>

@@ -7,9 +7,9 @@ namespace API.Mappings
         public static void MapEndpoints(this WebApplication app)
         {
             AnimalEndpoints.Map(app);
-            // TODO: Map CompraGado
-            // TODO: Map CompraGadoItem
-            // TODO: Map Pecuarista
+            CompraGadoEndpoints.Map(app);
+            CompraGadoItemEndpoints.Map(app);
+            PecuaristaEndpoints.Map(app);
         }
     }
 }

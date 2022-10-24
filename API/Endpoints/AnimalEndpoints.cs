@@ -3,11 +3,11 @@
     public static class AnimalEndpoints
     {
 
-        public const string POST_Route = "/animal/{id}";
-        public const string PUT_Route = "/animal/{id}";
-        public const string DELETE_Route = "/animal/{id}";
-        public const string GETById_Route = "/animal/{id}";
-        public const string GETAll_Route = "/animal";
+        public const string POST_Route = "api/animal/{id}";
+        public const string PUT_Route = "api/animal/{id}";
+        public const string DELETE_Route = "api/animal/{id}";
+        public const string GETById_Route = "api/animal/{id}";
+        public const string GETAll_Route = "api/animal";
 
         public static void Map(WebApplication app)
         {
@@ -26,7 +26,7 @@
                 {
                     animalRepository.Criar(animal);
                     await animalRepository.Salvar();
-                    return Results.Created($"/animal/{animal.IdAnimal}", animal);
+                    return Results.Created($"{GETAll_Route}/{animal.IdAnimal}", animal);
                 }
                 catch (Exception ex)
                 {

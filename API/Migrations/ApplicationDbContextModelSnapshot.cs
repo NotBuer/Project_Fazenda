@@ -81,8 +81,7 @@ namespace API.Migrations
                     b.Property<int>("IdCompraGado")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Quantidade")
-                        .IsRequired()
+                    b.Property<int>("Quantidade")
                         .HasMaxLength(999)
                         .HasColumnType("int");
 
