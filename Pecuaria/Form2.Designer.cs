@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.pecuarista_combobox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,14 +59,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Adicionar compra";
             // 
-            // comboBox2
+            // pecuarista_combobox
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(115, 142);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(454, 32);
-            this.comboBox2.TabIndex = 2;
+            this.pecuarista_combobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pecuarista_combobox.FormattingEnabled = true;
+            this.pecuarista_combobox.Location = new System.Drawing.Point(115, 142);
+            this.pecuarista_combobox.Name = "pecuarista_combobox";
+            this.pecuarista_combobox.Size = new System.Drawing.Size(454, 32);
+            this.pecuarista_combobox.TabIndex = 2;
             // 
             // label2
             // 
@@ -233,7 +233,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.pecuarista_combobox);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
             this.Text = "Compras";
@@ -249,7 +249,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox pecuarista_combobox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;

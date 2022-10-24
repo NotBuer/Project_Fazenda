@@ -38,10 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.datagrid_pecuaristas = new System.Windows.Forms.DataGridView();
-            this.colunID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColunPecuarista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColunValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCadastrarP = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_pecuaristas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,46 +128,37 @@
             // 
             // datagrid_pecuaristas
             // 
+            this.datagrid_pecuaristas.AllowUserToAddRows = false;
+            this.datagrid_pecuaristas.AllowUserToDeleteRows = false;
+            this.datagrid_pecuaristas.AllowUserToResizeColumns = false;
+            this.datagrid_pecuaristas.AllowUserToResizeRows = false;
+            this.datagrid_pecuaristas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.datagrid_pecuaristas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.datagrid_pecuaristas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_pecuaristas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colunID,
-            this.ColunPecuarista,
-            this.colunData,
-            this.ColunValor});
             this.datagrid_pecuaristas.Location = new System.Drawing.Point(22, 302);
             this.datagrid_pecuaristas.Name = "datagrid_pecuaristas";
+            this.datagrid_pecuaristas.ReadOnly = true;
             this.datagrid_pecuaristas.Size = new System.Drawing.Size(1100, 265);
             this.datagrid_pecuaristas.TabIndex = 14;
             this.datagrid_pecuaristas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // colunID
+            // btnCadastrarP
             // 
-            this.colunID.HeaderText = "ID";
-            this.colunID.Name = "colunID";
-            // 
-            // ColunPecuarista
-            // 
-            this.ColunPecuarista.HeaderText = "Pecuarista";
-            this.ColunPecuarista.Name = "ColunPecuarista";
-            this.ColunPecuarista.Width = 350;
-            // 
-            // colunData
-            // 
-            this.colunData.HeaderText = "Data de entrega";
-            this.colunData.Name = "colunData";
-            this.colunData.Width = 350;
-            // 
-            // ColunValor
-            // 
-            this.ColunValor.HeaderText = "Valor total";
-            this.ColunValor.Name = "ColunValor";
-            this.ColunValor.Width = 256;
+            this.btnCadastrarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarP.Location = new System.Drawing.Point(902, 200);
+            this.btnCadastrarP.Name = "btnCadastrarP";
+            this.btnCadastrarP.Size = new System.Drawing.Size(127, 41);
+            this.btnCadastrarP.TabIndex = 20;
+            this.btnCadastrarP.Text = "Cadastrar Pecuarista";
+            this.btnCadastrarP.UseVisualStyleBackColor = true;
+            this.btnCadastrarP.Click += new System.EventHandler(this.btnCadastrarP_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 624);
+            this.Controls.Add(this.btnCadastrarP);
             this.Controls.Add(this.datagrid_pecuaristas);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
@@ -205,10 +193,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView datagrid_pecuaristas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColunPecuarista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColunValor;
+        private System.Windows.Forms.Button btnCadastrarP;
     }
 }
 

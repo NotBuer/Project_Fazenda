@@ -80,5 +80,12 @@ namespace Pecuaria
             Thread T = new Thread(() => Application.Run(new Form2()));
             T.Start();
         }
+
+        private void btnCadastrarP_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread T = new Thread(() => Application.Run(new Form4()));
+            T.Start();
+        }
     }
 }

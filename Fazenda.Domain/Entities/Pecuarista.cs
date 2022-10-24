@@ -7,7 +7,7 @@
         [Required]
         public string NomePecuarista { get; set; }
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public ICollection<CompraGado>? CompraGados { get; set; }
     }
 }
