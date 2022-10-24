@@ -32,6 +32,7 @@ namespace Pecuaria
                 DescricaoAnimal = txt_animalName.Text,
                 Preco = decimal.Parse(txt_animalPrice.Text), // TODO: Numbers-only field, needs validation against other characters.
             };
+
             using (HttpClient client = new HttpClient())
             {
                 var serializedAnimal = JsonConvert.SerializeObject(animal);
