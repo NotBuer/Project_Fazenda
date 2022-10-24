@@ -43,7 +43,19 @@ namespace Pecuaria
 
         private void btn_addAnimal_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
+            Thread T = new Thread(() => Application.Run(new Form3()));
+            T.Start();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
