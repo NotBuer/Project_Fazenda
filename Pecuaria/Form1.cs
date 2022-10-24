@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Pecuaria.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,9 +21,27 @@ namespace Pecuaria
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
             System.Net.ServicePointManager.ServerCertificateValidationCallback = (senderX, certificate, chain, sslPolicyErrors) => { return true; };
+
+            string URI = Services.Services.API_URL + Services.Services.PECUARISTA_GETAll_Route;
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage response = await client.GetAsync(URI))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string json = await response.Content.ReadAsStringAsync();
+                        datagrid_pecuaristas.DataSource = JsonConvert.DeserializeObject<Pecuarista[]>(json).ToList();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Não foi possivel fazer a requisição de obter todos pecuaristas!" +
+                            "\nErro: " + response.StatusCode);
+                    }
+                }
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)

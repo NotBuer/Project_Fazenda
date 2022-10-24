@@ -2,7 +2,7 @@
 {
     public class CompraGadoItem
     {
-        public int IdCompraGadoItem { get; set; }
+        public int Id { get; set; }
 
         public int IdCompraGado { get; set; }
         public CompraGado CompraGado { get; set; }

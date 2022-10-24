@@ -37,12 +37,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.datagrid_pecuaristas = new System.Windows.Forms.DataGridView();
             this.colunID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColunPecuarista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColunValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_pecuaristas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPesquisar
@@ -129,19 +129,19 @@
             this.comboBox1.Size = new System.Drawing.Size(373, 32);
             this.comboBox1.TabIndex = 13;
             // 
-            // dataGridView1
+            // datagrid_pecuaristas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.datagrid_pecuaristas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid_pecuaristas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colunID,
             this.ColunPecuarista,
             this.colunData,
             this.ColunValor});
-            this.dataGridView1.Location = new System.Drawing.Point(22, 302);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1100, 265);
-            this.dataGridView1.TabIndex = 14;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.datagrid_pecuaristas.Location = new System.Drawing.Point(22, 302);
+            this.datagrid_pecuaristas.Name = "datagrid_pecuaristas";
+            this.datagrid_pecuaristas.Size = new System.Drawing.Size(1100, 265);
+            this.datagrid_pecuaristas.TabIndex = 14;
+            this.datagrid_pecuaristas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // colunID
             // 
@@ -171,7 +171,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 624);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.datagrid_pecuaristas);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -187,7 +187,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Projeto Fazenda";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_pecuaristas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,7 +204,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView datagrid_pecuaristas;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColunPecuarista;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunData;
