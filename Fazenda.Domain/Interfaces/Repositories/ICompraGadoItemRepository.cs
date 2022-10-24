@@ -8,7 +8,7 @@
 
         Task<int> Salvar();
 
-        Task<List<CompraGadoItem>> ObterCompraGadoItem();
+        Task<List<CompraGadoItem>> ObterCompraGadoItens();
         Task<CompraGadoItem> ObterCompraGadoItemPorId(int id);
     }
 }

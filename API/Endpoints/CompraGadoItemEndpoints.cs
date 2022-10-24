@@ -25,7 +25,7 @@
                 {
                     compragadoitemRepository.Criar(compragadoitem);
                     await compragadoitemRepository.Salvar();
-                    return Results.Created($"{GETAll_Route}/{compragadoitem.IdCompraGadoItem}", compragadoitem);
+                    return Results.Created($"{GETAll_Route}/{compragadoitem.Id}", compragadoitem);
                 }
                 catch (Exception ex)
                 {

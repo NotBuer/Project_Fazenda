@@ -37,7 +37,7 @@
 
         public async Task<Animal> ObterAnimalPorId(int id)
         {
-            var response = await _contexto.Animal.FirstOrDefaultAsync(e => e.IdAnimal == id);
+            var response = await _contexto.Animal.FirstOrDefaultAsync(e => e.Id == id);
             return response;
         }
 

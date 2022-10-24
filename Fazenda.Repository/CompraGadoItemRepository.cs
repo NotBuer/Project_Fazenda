@@ -30,7 +30,7 @@
             return await _contexto.SaveChangesAsync();
         }
 
-        public Task<List<CompraGadoItem>> ObterCompraGadoItem()
+        public Task<List<CompraGadoItem>> ObterCompraGadoItens()
         {
             var response = _contexto.CompraGadoItem.ToListAsync();
             return response;
@@ -38,7 +38,7 @@
 
         public Task<CompraGadoItem> ObterCompraGadoItemPorId(int id)
         {
-            var response = _contexto.CompraGadoItem.FirstOrDefaultAsync(e => e.IdCompraGadoItem == id);
+            var response = _contexto.CompraGadoItem.FirstOrDefaultAsync(e => e.Id == id);
             return response;
         }
 

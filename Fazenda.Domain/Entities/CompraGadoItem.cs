@@ -2,14 +2,21 @@
 {
     public class CompraGadoItem
     {
-        public int IdCompraGadoItem { get; set; }
+        public int Id { get; set; }
 
+        [Required]
         public int IdCompraGado { get; set; }
+
+        [JsonIgnore]
         public CompraGado? CompraGado { get; set; }
 
+        [Required]
         public int IdAnimal { get; set; }
+
+        [JsonIgnore]
         public Animal? Animal { get; set; }
 
-        public int? Quantidade { get; set; }
+        [Required]
+        public int Quantidade { get; set; }
     }
 }

@@ -29,7 +29,7 @@
             return await _contexto.SaveChangesAsync();
         }
 
-        public async Task<List<Pecuarista>> ObterPecuarista()
+        public async Task<List<Pecuarista>> ObterPecuaristas()
         {
             var response = await _contexto.Pecuarista.ToListAsync();
             return response;
@@ -37,7 +37,7 @@
 
         public async Task<Pecuarista> ObterPecuaristaPorId(int id)
         {
-            var response = await _contexto.Pecuarista.FirstOrDefaultAsync(e => e.IdPecuarista == id);
+            var response = await _contexto.Pecuarista.FirstOrDefaultAsync(e => e.Id == id);
             return response;
         }
 

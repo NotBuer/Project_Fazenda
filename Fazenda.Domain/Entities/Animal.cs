@@ -1,13 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
-
-namespace Fazenda.Domain.Entities
+﻿namespace Fazenda.Domain.Entities
 {
     public class Animal
     {
 
-        public int IdAnimal { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string DescricaoAnimal { get; set; }

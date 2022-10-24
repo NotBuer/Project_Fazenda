@@ -26,7 +26,7 @@
                 {
                     pecuaristaRepository.Criar(pecuarista);
                     await pecuaristaRepository.Salvar();
-                    return Results.Created($"{GETAll_Route}/{pecuarista.IdPecuarista}", pecuarista);
+                    return Results.Created($"{GETAll_Route}/{pecuarista.Id}", pecuarista);
                 }
                 catch (Exception ex)
                 {

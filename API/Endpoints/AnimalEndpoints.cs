@@ -26,7 +26,7 @@
                 {
                     animalRepository.Criar(animal);
                     await animalRepository.Salvar();
-                    return Results.Created($"{GETAll_Route}/{animal.IdAnimal}", animal);
+                    return Results.Created($"{GETAll_Route}/{animal.Id}", animal);
                 }
                 catch (Exception ex)
                 {

@@ -2,9 +2,12 @@
 {
     public class Pecuarista
     {
-        public int IdPecuarista { get; set; }
-        public string? NomePecuarista { get; set; }
+        public int Id { get; set; }
 
+        [Required]
+        public string NomePecuarista { get; set; }
+
+        [JsonIgnore]
         public ICollection<CompraGado>? CompraGados { get; set; }
     }
 }

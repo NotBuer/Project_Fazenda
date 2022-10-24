@@ -4,7 +4,6 @@ namespace Pecuaria.Models
 {
     public class Animal
     {
-
         public int IdAnimal { get; set; }
         public string DescricaoAnimal { get; set; }
         public decimal Preco { get; set; }

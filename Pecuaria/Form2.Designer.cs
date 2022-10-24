@@ -37,20 +37,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.labelTotal = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dgvAnimais = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btn_addAnimal = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.colunAnimal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.labelTotal = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimais)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -133,7 +129,7 @@
             // 
             this.groupBox1.Controls.Add(this.labelTotal);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvAnimais);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.btn_addAnimal);
@@ -143,21 +139,33 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // dataGridView1
+            // labelTotal
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colunAnimal,
-            this.colunQuantidade,
-            this.colunPreco,
-            this.colunValor});
-            this.dataGridView1.Location = new System.Drawing.Point(139, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(960, 230);
-            this.dataGridView1.TabIndex = 17;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.Location = new System.Drawing.Point(65, 229);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(0, 20);
+            this.labelTotal.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(11, 229);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 20);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Total:";
+            // 
+            // dgvAnimais
+            // 
+            this.dgvAnimais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAnimais.Location = new System.Drawing.Point(139, 19);
+            this.dgvAnimais.Name = "dgvAnimais";
+            this.dgvAnimais.Size = new System.Drawing.Size(960, 230);
+            this.dgvAnimais.TabIndex = 17;
             // 
             // button1
             // 
@@ -200,30 +208,6 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // colunAnimal
-            // 
-            this.colunAnimal.HeaderText = "Animal";
-            this.colunAnimal.Name = "colunAnimal";
-            this.colunAnimal.Width = 166;
-            // 
-            // colunQuantidade
-            // 
-            this.colunQuantidade.HeaderText = "Quantidade";
-            this.colunQuantidade.Name = "colunQuantidade";
-            this.colunQuantidade.Width = 250;
-            // 
-            // colunPreco
-            // 
-            this.colunPreco.HeaderText = "Preco";
-            this.colunPreco.Name = "colunPreco";
-            this.colunPreco.Width = 250;
-            // 
-            // colunValor
-            // 
-            this.colunValor.HeaderText = "Valor total";
-            this.colunValor.Name = "colunValor";
-            this.colunValor.Width = 250;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -232,25 +216,6 @@
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 19;
             this.label3.Text = "label3";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 229);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 20);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Total:";
-            // 
-            // labelTotal
-            // 
-            this.labelTotal.AutoSize = true;
-            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(65, 229);
-            this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(0, 20);
-            this.labelTotal.TabIndex = 21;
             // 
             // Form2
             // 
@@ -273,7 +238,7 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimais)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,15 +255,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvAnimais;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btn_addAnimal;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunAnimal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunQuantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunPreco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunValor;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label label6;

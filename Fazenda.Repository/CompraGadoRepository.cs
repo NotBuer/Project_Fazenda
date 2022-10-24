@@ -37,7 +37,7 @@
 
         public async Task<CompraGado> ObterCompraGadoPorId(int id)
         {
-            var response = await _contexto.CompraGado.FirstOrDefaultAsync(e => e.IdCompra == id);
+            var response = await _contexto.CompraGado.FirstOrDefaultAsync(e => e.Id == id);
             return response;
         }
 

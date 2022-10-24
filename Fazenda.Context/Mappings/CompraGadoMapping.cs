@@ -4,8 +4,8 @@
     {
         public void Configure(EntityTypeBuilder<CompraGado> builder)
         {
-            builder.HasKey(c => c.IdCompra);
-            builder.Property(c => c.IdCompra).ValueGeneratedOnAdd();
+            builder.HasKey(c => c.Id);
+            builder.Property(c => c.Id).ValueGeneratedOnAdd();
             builder.HasOne(c => c.Pecuarista)
                 .WithMany(p => p.CompraGados)
                 .HasForeignKey(fk => fk.IdPecuarista);

@@ -24,11 +24,11 @@ namespace API.Migrations
 
             modelBuilder.Entity("Fazenda.Domain.Entities.Animal", b =>
                 {
-                    b.Property<int>("IdAnimal")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdAnimal"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("DescricaoAnimal")
                         .IsRequired()
@@ -38,18 +38,18 @@ namespace API.Migrations
                     b.Property<decimal>("Preco")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("IdAnimal");
+                    b.HasKey("Id");
 
                     b.ToTable("Animal");
                 });
 
             modelBuilder.Entity("Fazenda.Domain.Entities.CompraGado", b =>
                 {
-                    b.Property<int>("IdCompra")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCompra"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime?>("DataEntrega")
                         .HasColumnType("datetime2");
@@ -57,7 +57,7 @@ namespace API.Migrations
                     b.Property<int>("IdPecuarista")
                         .HasColumnType("int");
 
-                    b.HasKey("IdCompra");
+                    b.HasKey("Id");
 
                     b.HasIndex("IdPecuarista");
 
@@ -66,14 +66,11 @@ namespace API.Migrations
 
             modelBuilder.Entity("Fazenda.Domain.Entities.CompraGadoItem", b =>
                 {
-                    b.Property<int>("IdCompraGadoItem")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCompraGadoItem"), 1L, 1);
-
-                    b.Property<int?>("AnimalIdAnimal1")
-                        .HasColumnType("int");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("IdAnimal")
                         .HasColumnType("int");
@@ -85,9 +82,7 @@ namespace API.Migrations
                         .HasMaxLength(999)
                         .HasColumnType("int");
 
-                    b.HasKey("IdCompraGadoItem");
-
-                    b.HasIndex("AnimalIdAnimal1");
+                    b.HasKey("Id");
 
                     b.HasIndex("IdAnimal");
 
@@ -98,18 +93,18 @@ namespace API.Migrations
 
             modelBuilder.Entity("Fazenda.Domain.Entities.Pecuarista", b =>
                 {
-                    b.Property<int>("IdPecuarista")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdPecuarista"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("NomePecuarista")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("IdPecuarista");
+                    b.HasKey("Id");
 
                     b.ToTable("Pecuarista");
                 });
@@ -127,14 +122,10 @@ namespace API.Migrations
 
             modelBuilder.Entity("Fazenda.Domain.Entities.CompraGadoItem", b =>
                 {
-                    b.HasOne("Fazenda.Domain.Entities.Animal", null)
-                        .WithMany("CompraGadoItems")
-                        .HasForeignKey("AnimalIdAnimal1");
-
                     b.HasOne("Fazenda.Domain.Entities.Animal", "Animal")
-                        .WithMany()
+                        .WithMany("CompraGadoItems")
                         .HasForeignKey("IdAnimal")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Fazenda.Domain.Entities.CompraGado", "CompraGado")

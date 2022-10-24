@@ -2,11 +2,15 @@
 {
     public class CompraGado
     {
-        public int IdCompra { get; set; }
+        public int Id { get; set; }
 
+        [Required]
         public int IdPecuarista { get; set; }
+
+        [JsonIgnore]
         public Pecuarista? Pecuarista { get; set; }
 
+        [JsonIgnore]
         public DateTime? DataEntrega { get; set; }
     }
 }

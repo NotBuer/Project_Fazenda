@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Pecuaria.Models;
 using System;
+using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Windows.Forms;
@@ -24,11 +25,12 @@ namespace Pecuaria
                     if (response.IsSuccessStatusCode)
                     {
                         string json = await response.Content.ReadAsStringAsync();
-                        Animal[] animal = JsonConvert.DeserializeObject<Animal[]>(json);
+                        dgvAnimais.DataSource = JsonConvert.DeserializeObject<Animal[]>(json).ToList();
                     }
                     else
                     {
-                        MessageBox.Show("Não foi possivel fazer a requisição de obter todos animais, por favor tente novamente!");
+                        MessageBox.Show($"Não foi possivel fazer a requisição de obter todos animais, por favor tente novamente!" +
+                            "\nErro: " + response.StatusCode);
                     }
                 }
             }
@@ -46,16 +48,6 @@ namespace Pecuaria
             this.Close();
             Thread T = new Thread(() => Application.Run(new Form3()));
             T.Start();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

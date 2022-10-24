@@ -8,7 +8,7 @@
 
         Task<int> Salvar();
 
-        Task<List<Pecuarista>> ObterPecuarista();
+        Task<List<Pecuarista>> ObterPecuaristas();
         Task<Pecuarista> ObterPecuaristaPorId(int id);
     }
 }
