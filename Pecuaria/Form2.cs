@@ -14,6 +14,7 @@ namespace Pecuaria
     {
 
         public static List<CompraGadoItem> compraGadoItemsList;
+        public List<Pecuarista> pecuaristas = new List<Pecuarista>();
 
         public Form2()
         {
@@ -23,25 +24,24 @@ namespace Pecuaria
 
         private async void Form2_Load(object sender, EventArgs e)
         {
-            dateTime_picker.Value = DateTime.Today;
+            pecuarista_combobox.DropDownClosed += DvgCompraGadoItem_Click;
 
-            // Populate Pecuarista ComboBox
-            string URI = Services.Services.API_URL + Services.Services.PECUARISTA_GETAll_Route;
+            // GET All Pecuaristas and cache it.
+            string URI_Get_Pecuarista = Services.Services.API_URL + Services.Services.PECUARISTA_GETAll_Route;
             using (HttpClient client = new HttpClient())
             {
-                using (HttpResponseMessage response = await client.GetAsync(URI))
+                using (HttpResponseMessage response = await client.GetAsync(URI_Get_Pecuarista))
                 {
                     if (response.IsSuccessStatusCode)
                     {
                         string json = await response.Content.ReadAsStringAsync();
-                        List<Pecuarista> pecuaristas = JsonConvert.DeserializeObject<Pecuarista[]>(json).ToList();
+                        pecuaristas = JsonConvert.DeserializeObject<Pecuarista[]>(json).ToList();
                         List<string> pecuaristaNomes = new List<string>();
                         for (int i = 0; i < pecuaristas.Count; i++)
                         {
                             pecuaristaNomes.Add(pecuaristas[i].NomePecuarista);
                         }
                         pecuarista_combobox.DataSource = pecuaristaNomes;
-                        object test = pecuarista_combobox.SelectedValue;
                     }
                     else
                     {
@@ -50,6 +50,13 @@ namespace Pecuaria
                     }
                 }
             }
+
+            LoadAllData();
+        }
+
+        private void DvgCompraGadoItem_Click(object sender, EventArgs e)
+        {
+            LoadAllData();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -143,6 +150,36 @@ namespace Pecuaria
             this.Close();
             Thread T = new Thread(() => Application.Run(new Form4()));
             T.Start();
+        }
+
+        private async void LoadAllData()
+        {
+            dvgCompraGadoItem.DataSource = null;
+            dateTime_picker.Value = DateTime.Today;
+
+            // GET the selected pecuarista
+            Pecuarista selectedPecuarista = pecuaristas.Where(p => p.NomePecuarista == pecuarista_combobox.SelectedValue.ToString()).FirstOrDefault();
+
+            // GET CompraGado
+            string URI_Get_CompraGado = Services.Services.API_URL + Services.Services.COMPRAGADO_GETAll_Route;
+            List<CompraGado> getAllCompraGado = new List<CompraGado>();
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage response = await client.GetAsync(URI_Get_CompraGado))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string json = await response.Content.ReadAsStringAsync();
+                        getAllCompraGado = JsonConvert.DeserializeObject<CompraGado[]>(json).ToList();
+                    }
+                }
+            }
+
+            // GET the 'CompraGado' from the selected pecuarista
+            List<CompraGado> selectedCompraGado = getAllCompraGado.Where(p => p.IdPecuarista == selectedPecuarista.Id).ToList();
+
+            // Populate the GridView with the selectedCompraGado data.
+            dvgCompraGadoItem.DataSource = selectedCompraGado;
         }
     }
 }

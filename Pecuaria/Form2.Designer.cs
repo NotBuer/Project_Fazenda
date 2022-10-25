@@ -38,15 +38,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelTotal = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dgvAnimais = new System.Windows.Forms.DataGridView();
+            this.dvgCompraGadoItem = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btn_addAnimal = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnCadastrarP = new System.Windows.Forms.Button();
             this.dateTime_picker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimais)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgCompraGadoItem)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -121,7 +120,7 @@
             // 
             this.groupBox1.Controls.Add(this.labelTotal);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.dgvAnimais);
+            this.groupBox1.Controls.Add(this.dvgCompraGadoItem);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.btn_addAnimal);
@@ -151,13 +150,13 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Total:";
             // 
-            // dgvAnimais
+            // dvgCompraGadoItem
             // 
-            this.dgvAnimais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnimais.Location = new System.Drawing.Point(139, 19);
-            this.dgvAnimais.Name = "dgvAnimais";
-            this.dgvAnimais.Size = new System.Drawing.Size(960, 230);
-            this.dgvAnimais.TabIndex = 17;
+            this.dvgCompraGadoItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgCompraGadoItem.Location = new System.Drawing.Point(139, 19);
+            this.dvgCompraGadoItem.Name = "dvgCompraGadoItem";
+            this.dvgCompraGadoItem.Size = new System.Drawing.Size(960, 230);
+            this.dvgCompraGadoItem.TabIndex = 17;
             // 
             // button1
             // 
@@ -200,17 +199,6 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // btnCadastrarP
-            // 
-            this.btnCadastrarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarP.Location = new System.Drawing.Point(862, 248);
-            this.btnCadastrarP.Name = "btnCadastrarP";
-            this.btnCadastrarP.Size = new System.Drawing.Size(127, 41);
-            this.btnCadastrarP.TabIndex = 19;
-            this.btnCadastrarP.Text = "Cadastrar Pecuarista";
-            this.btnCadastrarP.UseVisualStyleBackColor = true;
-            this.btnCadastrarP.Click += new System.EventHandler(this.btnCadastrarP_Click);
-            // 
             // dateTime_picker
             // 
             this.dateTime_picker.Location = new System.Drawing.Point(699, 154);
@@ -224,7 +212,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 609);
             this.Controls.Add(this.dateTime_picker);
-            this.Controls.Add(this.btnCadastrarP);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnVoltar);
@@ -239,7 +226,7 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimais)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgCompraGadoItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,14 +242,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvAnimais;
+        private System.Windows.Forms.DataGridView dvgCompraGadoItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btn_addAnimal;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnCadastrarP;
         private System.Windows.Forms.DateTimePicker dateTime_picker;
     }
 }
