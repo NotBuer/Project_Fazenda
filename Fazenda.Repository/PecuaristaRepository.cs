@@ -1,4 +1,6 @@
-﻿namespace Fazenda.Repository
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Fazenda.Repository
 {
     public class PecuaristaRepository : IPecuaristaRepository
     {
@@ -41,5 +43,10 @@
             return response;
         }
 
+        public async Task<Pecuarista> ObterPecuaristaPorNome(string nome)
+        {
+            var response = await _contexto.Pecuarista.Where(e => e.NomePecuarista == nome).FirstAsync();
+            return response;
+        }
     }
 }

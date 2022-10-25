@@ -33,7 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -45,6 +44,7 @@
             this.btn_addAnimal = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCadastrarP = new System.Windows.Forms.Button();
+            this.dateTime_picker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimais)).BeginInit();
             this.SuspendLayout();
@@ -95,14 +95,6 @@
             this.label4.Size = new System.Drawing.Size(27, 24);
             this.label4.TabIndex = 8;
             this.label4.Text = "ID";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(699, 145);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(404, 29);
-            this.textBox2.TabIndex = 9;
             // 
             // label5
             // 
@@ -219,17 +211,24 @@
             this.btnCadastrarP.UseVisualStyleBackColor = true;
             this.btnCadastrarP.Click += new System.EventHandler(this.btnCadastrarP_Click);
             // 
+            // dateTime_picker
+            // 
+            this.dateTime_picker.Location = new System.Drawing.Point(699, 154);
+            this.dateTime_picker.Name = "dateTime_picker";
+            this.dateTime_picker.Size = new System.Drawing.Size(249, 20);
+            this.dateTime_picker.TabIndex = 20;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 609);
+            this.Controls.Add(this.dateTime_picker);
             this.Controls.Add(this.btnCadastrarP);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -253,7 +252,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -265,5 +263,6 @@
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCadastrarP;
+        private System.Windows.Forms.DateTimePicker dateTime_picker;
     }
 }

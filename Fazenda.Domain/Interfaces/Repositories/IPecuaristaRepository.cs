@@ -10,5 +10,6 @@
 
         Task<List<Pecuarista>> ObterPecuaristas();
         Task<Pecuarista> ObterPecuaristaPorId(int id);
+        Task<Pecuarista> ObterPecuaristaPorNome(string nome);
     }
 }

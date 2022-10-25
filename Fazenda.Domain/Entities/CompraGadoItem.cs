@@ -7,13 +7,13 @@
         [Required]
         public int IdCompraGado { get; set; }
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public CompraGado? CompraGado { get; set; }
 
         [Required]
         public int IdAnimal { get; set; }
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public Animal? Animal { get; set; }
 
         [Required]

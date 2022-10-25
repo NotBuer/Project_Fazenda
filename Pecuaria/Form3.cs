@@ -29,6 +29,7 @@ namespace Pecuaria
 
             Animal animal = new Animal
             {
+                Id = 0,
                 NomeAnimal = txt_animalName.Text,
                 Preco = decimal.Parse(txt_animalPrice.Text), // TODO: Numbers-only field, needs validation against other characters.
             };
@@ -37,11 +38,48 @@ namespace Pecuaria
             {
                 var serializedAnimal = JsonConvert.SerializeObject(animal);
                 var content = new StringContent(serializedAnimal, Encoding.UTF8, "application/json");
-                var result = await client.PostAsync(URI, content);
+                using(HttpResponseMessage responseMessage = await client.PostAsync(URI, content))
+                {
+                    if (responseMessage.IsSuccessStatusCode)
+                    {
+                        string responseContent = await responseMessage.Content.ReadAsStringAsync();
+                        Animal animalResponse = JsonConvert.DeserializeObject<Animal>(responseContent);
+                        animal.Id = animalResponse.Id;
+                    }
+                }
+            }   
+
+            // Retrieve CompraGadoItem
+            CompraGadoItem compraGadoItemDataTemp = Form2.compraGadoItemsList.Last();
+            CompraGadoItem compraGadoItem = new CompraGadoItem()
+            {
+                Id = compraGadoItemDataTemp.Id,
+                IdCompraGado = compraGadoItemDataTemp.IdCompraGado,
+                //CompraGado = compraGadoItemDataTemp.CompraGado,
+                IdAnimal = animal.Id,
+                //Animal = animal,
+                Quantidade = compraGadoItemDataTemp.Quantidade
+            };
+
+            // POST CompraGadoItem
+            string URI_POST_CompraGadoItem = Services.Services.API_URL + Services.Services.COMPRAGADOITEM_POST_Route;
+            using (HttpClient client = new HttpClient())
+            {
+                var serializedData = JsonConvert.SerializeObject(compraGadoItem);
+                var content = new StringContent(serializedData, Encoding.UTF8, "application/json");
+                using (HttpResponseMessage response = await client.PostAsync(URI_POST_CompraGadoItem, content))
+                {
+                    string test = await response.Content.ReadAsStringAsync();
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show($"Não foi possivel fazer o cadastro do 'CompraGadoItem.Model', por favor tente novamente!" +
+                                        "\nErro: " + response.StatusCode);
+                    }
+                }
             }
 
             this.Close();
-            Thread T = new Thread(() => Application.Run(new Form1()));
+            Thread T = new Thread(() => Application.Run(new Form2()));
             T.Start();
         }
     }

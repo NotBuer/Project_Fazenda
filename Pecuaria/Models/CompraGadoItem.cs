@@ -10,6 +10,6 @@
         public int IdAnimal { get; set; }
         public Animal Animal { get; set; }
 
-        public int? Quantidade { get; set; }
+        public int Quantidade { get; set; }
     }
 }

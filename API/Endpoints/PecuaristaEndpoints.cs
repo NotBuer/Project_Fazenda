@@ -8,6 +8,7 @@
         public const string DELETE_Route = "api/pecuarista/{id}";
         public const string GETById_Route = "api/pecuarista/{id}";
         public const string GETAll_Route = "api/pecuarista";
+        public const string GETByName_Route = "api/pecuarista/name/{name}";
 
         public static void Map(WebApplication app)
         {
@@ -16,6 +17,7 @@
             MapDeletePecuarista(app);
             MapGetPecuaristaById(app);
             MapGetAllPecuaristas(app);
+            MapGetPecuaristaByName(app);
         }
 
         private static void MapCreatePecuarista(WebApplication app)
@@ -101,6 +103,24 @@
                     List<Pecuarista> pecuaristas = await pecuaristaRepository.ObterPecuaristas();
                     if (pecuaristas == null) return Results.NoContent();
                     return Results.Ok(pecuaristas);
+
+                }
+                catch (Exception ex)
+                {
+                    return Results.NotFound(ex.Message);
+                }
+            });
+        }
+
+        private static void MapGetPecuaristaByName(WebApplication app)
+        {
+            app.MapGet(GETByName_Route, async (PecuaristaRepository pecuaristaRepository, [FromQuery] string name) =>
+            {
+                try
+                {
+                    Pecuarista pecuarista = await pecuaristaRepository.ObterPecuaristaPorNome(name);
+                    if (pecuarista == null) return Results.NoContent();
+                    return Results.Ok(pecuarista);
 
                 }
                 catch (Exception ex)

@@ -21,6 +21,7 @@
         public const string PECUARISTA_DELETE_Route = "api/pecuarista/{id}";
         public const string PECUARISTA_GETById_Route = "api/pecuarista/{id}";
         public const string PECUARISTA_GETAll_Route = "api/pecuarista";
+        public const string PECUARISTA_GETByName_Route = "api/pecuarista/name/";
 
         public const string COMPRAGADOITEM_POST_Route = "api/compragadoitem/{id}";
         public const string COMPRAGADOITEM_PUT_Route = "api/compragadoitem/{id}";
