@@ -92,6 +92,7 @@
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Animal.cs" />
+    <Compile Include="Models\AnimalCompraGadoItemOutput.cs" />
     <Compile Include="Models\CompraGado.cs" />
     <Compile Include="Models\CompraGadoItem.cs" />
     <Compile Include="Models\Pecuarista.cs" />

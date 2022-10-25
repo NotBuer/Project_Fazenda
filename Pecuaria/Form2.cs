@@ -178,8 +178,72 @@ namespace Pecuaria
             // GET the 'CompraGado' from the selected pecuarista
             List<CompraGado> selectedCompraGado = getAllCompraGado.Where(p => p.IdPecuarista == selectedPecuarista.Id).ToList();
 
+            // GET CompraGadoItem
+            string URI_Get_CompraGadoItem = Services.Services.API_URL + Services.Services.COMPRAGADOITEM_GETAll_Route;
+            List<CompraGadoItem> getAllCompraGadoItem = new List<CompraGadoItem>();
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage response = await client.GetAsync(URI_Get_CompraGadoItem))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string json = await response.Content.ReadAsStringAsync();
+                        getAllCompraGadoItem = JsonConvert.DeserializeObject<CompraGadoItem[]>(json).ToList();
+                    }
+                }
+            }
+
+
+            // GET the 'CompraGadoItem' related to the selected 'CompraGado'.
+            List<CompraGadoItem> selectedCompraGadoItemList = new List<CompraGadoItem>();
+
+            foreach (CompraGado compraGado in selectedCompraGado)
+            {
+                foreach (CompraGadoItem compraGadoItem in getAllCompraGadoItem)
+                {
+                    if (compraGado.Id == compraGadoItem.IdCompraGado)
+                    {
+                        selectedCompraGadoItemList.Add(compraGadoItem);
+                    }
+                }
+            }
+
+            // Get all animals Ids from 'selectedCompraGadoItemList'
+            string URI_Get_Animal = Services.Services.API_URL + Services.Services.ANIMAL_GETAll_Route;
+            List<Animal> selectedAnimalsList = new List<Animal>();
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage response = await client.GetAsync(URI_Get_Animal))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string json = await response.Content.ReadAsStringAsync();
+                        selectedAnimalsList = JsonConvert.DeserializeObject<Animal[]>(json).ToList();
+                    }
+                }
+            }
+
+            List<AnimalCompraGadoItemOutput> animalCompraGadoItemOutput = new List<AnimalCompraGadoItemOutput>();
+            foreach (CompraGadoItem compraGadoItem in selectedCompraGadoItemList)
+            {
+                foreach (Animal animal in selectedAnimalsList)
+                {
+                    if (compraGadoItem.IdAnimal == animal.Id)
+                    {
+                        decimal valorTotal = compraGadoItem.Quantidade * animal.Preco;
+                        animalCompraGadoItemOutput.Add(new AnimalCompraGadoItemOutput()
+                        {
+                            NomeAnimal = animal.NomeAnimal,
+                            Quantidade = compraGadoItem.Quantidade,
+                            Preco = animal.Preco,
+                            ValorTotal = valorTotal,
+                        });
+                    }
+                }
+            }
+
             // Populate the GridView with the selectedCompraGado data.
-            dvgCompraGadoItem.DataSource = selectedCompraGado;
+            dvgCompraGadoItem.DataSource = animalCompraGadoItemOutput;
         }
     }
 }
